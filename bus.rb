@@ -3,10 +3,10 @@ class Bus
 attr_accessor :passengers
 attr_reader :route, :destination
 
-  def initialize(route, destination, passangers)
+  def initialize(route, destination)
     @route = route
     @destination = destination
-    @passengers = passangers
+    @passengers = []
   end
 
 def drive()

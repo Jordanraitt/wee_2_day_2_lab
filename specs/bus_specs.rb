@@ -7,8 +7,8 @@ require_relative("../Person.rb")
 class BusTest < MiniTest::Test
 
   def setup()
-    @person1 = Person.new("Rana", 29)
-    @person2 = Person.new("Jordan", 26)
+    @passenger1 = Person.new("Rana", 29)
+    @passenger2 = Person.new("Jordan", 26)
     @bus1 = Bus.new("22", "Glasgow")
     @bus2 = Bus.new("23", "Aberdeen")
   end
@@ -30,8 +30,8 @@ class BusTest < MiniTest::Test
   end
 
   def test_add_passengers()
-    expecting = [@person1]
-    assert_equal(expecting, @bus1.passengers)
+    @bus1.add_passengers(@passanger1)
+    assert_equal(1, @bus1.passengers.count)
 
   end
 
