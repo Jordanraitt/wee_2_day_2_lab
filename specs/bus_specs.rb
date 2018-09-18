@@ -7,8 +7,8 @@ require_relative("../Person.rb")
 class BusTest < MiniTest::Test
 
   def setup()
-    @passanger1 = Person.new("Rana", 29)
-    @passanger2 = Person.new("Jordan", 26)
+    @person1 = Person.new("Rana", 29)
+    @person2 = Person.new("Jordan", 26)
     @bus1 = Bus.new("22", "Glasgow")
     @bus2 = Bus.new("23", "Aberdeen")
   end
@@ -25,13 +25,13 @@ class BusTest < MiniTest::Test
     assert_equal("brumm, brumm", @bus1.drive)
   end
 
-  def test_return_how_many_passengers
+  def test_return_how_many_passengers()
     assert_equal(0, @bus1.passengers.count)
   end
 
-  def test_add_passengers
-    expected = 
-    assert_equal(expected, @bus1.passengers.count)
+  def test_add_passengers()
+    expecting = [@person1]
+    assert_equal(expecting, @bus1.passengers)
 
   end
 
